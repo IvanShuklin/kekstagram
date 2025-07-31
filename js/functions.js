@@ -4,18 +4,14 @@ const stringLengthCheck = function (string, maxLength) {
 
 const palindromeCheck = function (string) {
   const str = string.toString().toLowerCase().replaceAll(" ", "");
-  let reversedString = "";
-
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversedString += str[i];
-  }
+  let reversedString = str.split("").reverse().join("");
 
   return str === reversedString;
 };
 
 const getIntegers = function (string) {
-  let result = "";
   const str = string.toString();
+  let result = "";
 
   for (let i = 0; i < str.length; i++) {
     if (!isNaN(parseInt(str[i], 10))) {
@@ -23,5 +19,5 @@ const getIntegers = function (string) {
     }
   }
 
-  return result ? parseInt(result, 10) : NaN;
+  return parseInt(result, 10);
 };
